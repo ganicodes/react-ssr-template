@@ -1,0 +1,42 @@
+{
+  "name": "react-ssr-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "contributors": [],
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "dev": "nodemon --watch server --exec \"node src/server.js\"",
+    "build": "pnpm clean && webpack --mode development",
+    "start": "pnpm run build && node ./dist/server.cjs"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.6.5",
+    "nodemon": "^3.1.11",
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
