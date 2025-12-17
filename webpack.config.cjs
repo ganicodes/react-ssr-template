@@ -29,6 +29,8 @@ const resolve = {
   alias: {
     "@src": path.resolve(__dirname, "src/"),
     "@pages": path.resolve(__dirname, "src/pages/"), // Alias for the pages directory
+    "@components": path.resolve(__dirname, "src/components/"), // Alias for the components directory
+    "@utils": path.resolve(__dirname, "src/utils/"), // Alias for the utils directory
   },
 };
 
