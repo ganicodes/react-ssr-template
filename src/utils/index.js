@@ -1,21 +1,15 @@
 import App from "@pages/App";
 import fs from "fs";
-import React from "react";
 import { renderToString } from "react-dom/server";
+import { StaticRouter } from "react-router";
 
 export const generateReactAppHTML = async (location) => {
-  console.log("location: ", location);
-  // const reactApp = renderToString(
-  //   <StaticRouter location={location}>
-  //     <App />
-  //   </StaticRouter>
-  // );
-
   const reactApp = renderToString(
-    <React.StrictMode>
+    <StaticRouter location={location}>
       <App />
-    </React.StrictMode>
+    </StaticRouter>
   );
+
   const html = await fs.promises.readFile(`${__dirname}/index.html`, "utf-8");
   const reactHTML = html.replace(
     '<div id="root"></div>',
